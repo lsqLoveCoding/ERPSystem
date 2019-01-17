@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.shop.dao.ShDao">
+
+
+	<!-- 商品出库 -->
+	<update id="cksh" parameterType="org.shop.pojo.Sh">
+		update sh set sh=#{sh} where id=#{id}
+	</update>
+	<insert id="ck" parameterType="org.shop.pojo.Sh">
+		insert into sh(hw,name,phone,date,money,jg,lr,sh,sl,zrr)
+		value(#{hw},#{name},#{phone},#{date},#{money},#{jg},#{lr},#{sh},#{sl},#{zrr})
+	</insert>
+	<delete id="jj" parameterType="int">
+		delete from sh where id=#{id}
+	</delete>
+	<select id="cc" parameterType="int" resultType="map">
+		select * from sh where sh=0
+	</select>
+	<select id="bb" resultType="Map">
+			select sh.hw 'hw',sum(lr) 'lr' from sh group by sh.hw
+	</select>
+	<select id="bbs" resultType="Map">
+	select sum(lr) '利润' from sh
+	</select>
+	<select id="hws" parameterType="String" resultType="map">
+		select * from sh where hw=#{hw}
+	</select>
+	<select id="hwss" parameterType="int" resultType="org.shop.pojo.Sh">
+		select * from sh where id=#{id}
+	</select>
+
+
+
+</mapper>

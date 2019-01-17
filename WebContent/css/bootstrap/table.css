@@ -1,0 +1,225 @@
+/* 1. Universal Styles
+----------------------------------------------*/
+* {	font-family: 'Open Sans', sans-serif; }
+body {	font-size: 13px; }
+body, .templatemo-left-nav { background: #1f2124; }
+h1, h2, h3 { margin: 0; }
+h2 { font-size: 1.6em; }
+h3 {
+	color: #7f7f7f;
+	font-size: 1.4em;
+}
+ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+a:hover { text-decoration: none; }
+nav li {
+	font-size: 1.1em;
+	list-style: none;	
+	text-transform: uppercase;
+}
+.templatemo-inline-block {
+	display: inline-block;
+	vertical-align: middle;
+}
+.templatemo-block {	display: block; }
+.templatemo-position-relative {	position: relative; }
+.blue-text { color: #39ADB4; }
+.white-text { color: white; }
+.green-bg {	background-color: #39ADB4; }
+.yellow-bg { background-color: #D8D138; }
+.white-bg {	background-color: white; }
+.white-bg .fa-times { background-color: #d7d7d7; }
+.white-bg .fa-times:hover {	background: #83ccd1; }
+.orange-bg {
+	background-color: #F17A54;
+	color: white;
+}
+.orange-bg .fa-times {	background-color: #F0A790; }
+.orange-bg .fa-times:hover { background-color: #E14311; }
+.pink-bg {
+	background-color: #D7425C;
+	color: white;
+}
+.pink-bg .fa-times { background-color: #E57C8F;	}
+.pink-bg .fa-times:hover { background-color: #BD1F3B; }
+.blue-bg {
+	background-color: #3275BB;
+	color: white;
+}
+.blue-bg .fa-times { background-color: #6792C0; }
+.blue-bg .fa-times:hover { background-color: #2C639C; }
+.light-gray-bg { background-color: #efefef; }
+.padding-right-25 {	padding-right: 25px; }
+.margin-bottom-0 {	margin-bottom: 0; }
+.margin-bottom-5 {	margin-bottom: 5px; }
+.margin-bottom-10 {	margin-bottom: 10px; }
+.margin-bottom-30 {	margin-bottom: 30px; }
+.margin-bottom-70 {	margin-bottom: 70px; }
+.margin-right-15 { margin-right: 15px; }
+.margin-10 { margin: 10px; }
+.width-100 { width: 100%; }
+.no-border { border: none; }
+.border-radius-10 { border-radius: 10px; }
+footer { padding: 15px; }
+
+
+
+
+
+/* 6. Manage Users
+------------------------------*/
+.templatemo-sort-by:hover {	color: #ded9d9; }
+.templatemo-edit-btn {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	color: black;
+    background: white;
+	padding: 5px 15px;
+	transition: all 0.3s ease;
+}
+.templatemo-edit-btn:hover {
+	background-color: #39ADB4;
+	border: 1px solid #39ADB4;
+	color: white;
+}
+
+.templatemo-activity-btn {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: black;
+    background: white;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+.templatemo-activity-btn:hover {
+    background-color: #39ADB4;
+    border: 1px solid #39ADB4;
+    color: white;
+}
+
+.description {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	color: black;
+	background: white;
+	padding: 5px 15px;
+	transition: all 0.3s ease;
+}
+.description {
+	background-color: #39ADB4;
+	border: 1px solid #39ADB4;
+	color: white;
+}
+
+.templatemo-delete-btn {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	color: red;
+    background: white;
+	padding: 5px 15px;
+	transition: all 0.3s ease;
+}
+.templatemo-delete-btn:hover {
+	background-color: red;
+	border: 1px solid red;
+	color: white;
+}
+
+.templatemo-link { color: #607D8B; }
+.templatemo-link:hover { color: #39ADB4; }
+.templatemo-overflow-hidden { overflow: hidden; }
+.templatemo-user-table thead {
+	background-color: #39ADB4;
+	color: white;
+}
+.panel>.table-responsive:last-child>.table:last-child, .panel>.table:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.panel>.table:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.templatemo-social-icons-container {
+	background-color: #f4f3f3;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	box-shadow: 0px 0px 1px 1px rgba(161, 159, 159, 0.1);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top: 1px solid #dedede;
+}
+.social-icon-wrap {
+	width: 33%;
+	height: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.social-icon-wrap:nth-child(2) {
+	border-left: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+}
+.templatemo-social-icon {
+	background-color: #a6a6a6;
+	border-radius: 50%;
+	color: white;
+	cursor: pointer;
+	font-size: 1.5em;
+	padding-top: 8px;
+	width: 35px;
+	height: 35px;
+	transition: all 0.3s ease;
+}
+.templatemo-social-icon:hover {	background-color: #39ADB4; }
+.templatemo-content-img-bg {
+	background-position: center;
+	background-attachment: stretch;
+	min-height: 300px;
+}
+.content-bg-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+}
+.view-img-btn-wrap {
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+.templatemo-view-img-btn {
+	background-color: #f4f3f3;	
+	border: none;
+	border-radius: 5px;
+	color: #a6a6a6;
+	padding: 10px 50px;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+}
+.templatemo-view-img-btn:hover {
+	background-color: #39ADB4;
+	color: white;
+}

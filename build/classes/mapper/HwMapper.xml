@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.shop.dao.HwDao">
+	<!-- 商品列表 -->
+	<select id="queryGoods" resultType="org.shop.pojo.Hw">
+	   select * from hw
+	</select>
+	<select id="queryGoodsById" resultType="org.shop.pojo.Hw">
+	   select * from hw where id =#{id}
+	</select>
+   <select id="queryGoodByRepertoeyIdAndLocation" resultType="org.shop.pojo.Hw">
+	   select * from hw where repertoryId=#{repertoryId} and repertoryLocation = #{repertoryLocation}
+	</select>
+	
+	
+	<select id="sp" parameterType="org.shop.pojo.Hw" resultType="map">
+	select * from hw where sj=#{sj} and sh=#{sh}
+	<if test="name != null">
+	and name like "%"#{name}"%"
+	</if>
+	</select>
+	
+	<!-- 商品上下架信息 -->
+	<update id="spxj" parameterType="org.shop.pojo.Hw" >
+	update hw set date=#{date},sj=#{sj},sh=#{sh} where id=#{id}
+	</update>
+	
+	<!-- 新建入库单 -->
+	<insert id="xjrk" parameterType="org.shop.pojo.Hw">
+	insert into hw(name,number,money,phone,gy,date,sj,sh,zrr,repertoryId,repertoryLocation) 
+	value(#{name},#{number},#{money},#{phone},#{gy},#{date},#{sj},#{sh},#{zrr},#{repertoryId},#{repertoryLocation})
+	</insert>
+	
+	<select id="dy" parameterType="int"  resultType="org.shop.pojo.Hw">
+	select * from hw where id=#{id}
+	</select>
+	
+	<select id="dys" parameterType="String"  resultType="org.shop.pojo.Hw">
+	select * from hw where name=#{name}
+	</select>
+	
+	<!-- 商品上下架信息 -->
+	<update id="ckkk" parameterType="org.shop.pojo.Hw" >
+	update hw set date=#{date},number=#{number} where name=#{name}
+	</update>
+	
+	<delete id="jj" parameterType="int">
+		delete from hw where id=#{id}
+	</delete>
+	
+	<update id="updateHw" parameterType="org.shop.pojo.Hw" >
+	update hw set date=#{date},number=#{number},name=#{name},money=#{money},gy=#{gy},phone=#{phone} where id=#{id}
+	</update>
+	<update id="modifyRepertory" parameterType="org.shop.pojo.Hw" >
+	update hw set repertoryId=#{repertoryId} ,repertoryLocation=#{repertoryLocation} where id=#{id}
+	</update>
+	
+</mapper>

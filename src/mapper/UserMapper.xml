@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.shop.dao.UserDao">
+	<!-- 登录 -->
+	<select id="login" parameterType="org.shop.pojo.User"
+		resultType="org.shop.pojo.User">
+		select * from user where name=#{name} and
+		password=#{password}
+	</select>
+	
+	<!-- 注册 -->
+	<insert id="touser"  parameterType="org.shop.pojo.User">
+	insert into user(name,password,sex,year,phone,date,t1,t2) value(#{name},#{password},#{sex},#{year},#{phone},#{date},#{t1},#{t2})
+	</insert>
+	
+	<!-- 查询(支持模糊查询) -->
+	<select id="findall" parameterType="org.shop.pojo.User" resultType="map">
+	select * from user
+	<if test="name != null">
+	where name like "%"#{name}"%"
+	</if>
+	</select>
+	
+	<!-- 删除用户 -->
+	<delete id="delete"  parameterType="int" >
+	delete  from user where id=#{id}
+	</delete>
+	
+	<!-- 单查用户 -->
+	<select id="findid" parameterType="int" resultType="org.shop.pojo.User">
+	select * from user where id=#{id}
+	</select>
+	
+	<!-- 更新用户信息 -->
+	<update id="userup" parameterType="org.shop.pojo.User" >
+	update user set name=#{name},sex=#{sex},year=#{year},phone=#{phone},date=#{date},t1=#{t1},t2=#{t2} where id=#{id}
+	</update>
+	
+	
+</mapper>

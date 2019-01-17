@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace ="org.shop.dao.CustomerDao">
+     <insert id="addCustomer" parameterType="org.shop.pojo.Customer">
+       insert into customer(name,sex,year,date,phone,customerType,checkin) value(#{name},#{sex},#{year},#{date},#{phone},#{customerType},#{checkin})
+     </insert>
+	<select id="queryByName" parameterType="org.shop.pojo.Customer" resultType="map">
+	select * from customer
+	<if test="name != null">
+	where name like "%"#{name}"%"
+	</if>
+	</select>
+	<select id ="queryCustomerByName" parameterType="String" resultType="map">
+	select * from customer where name like "%"#{name}"%"
+	</select>
+	<select id ="queryAllCustomers" resultType="org.shop.pojo.Customer">
+	   select * from customer
+	</select>
+	<select id ="queryCustomerByPhone"  parameterType="String" resultType="org.shop.pojo.Customer">
+	   select * from customer where phone like "%"#{phone}"%"
+	</select>
+	
+	
+		<!-- 更新用户信息 -->
+	<update id="updateCustomer" parameterType="org.shop.pojo.Customer" >
+	update customer set money=#{money},pay=#{pay},date=#{date} where id=#{id}
+	</update>
+
+</mapper>
