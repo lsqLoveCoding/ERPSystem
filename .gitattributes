@@ -2,5 +2,5 @@
 * text=auto
 *.html linguist-language=java 
 *.jsp linguist-language=java
-*.javascript linguist-language=java 
+*.JavaScript linguist-language=java 
 *.java linguist-language=java 
